@@ -8,3 +8,5 @@ npm run dev
 # Component là gì
 
 - là 1 phần UI có thể nhỏ như các button, hoặc là lớn như 1 Page
+- những đoạn code muốn tái sử dụng -> component
+- rafce -> tạo nhanh 1 func component

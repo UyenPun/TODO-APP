@@ -1,4 +1,5 @@
 import "./App.css";
+import TodoItem from "./components/TodoItem";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       />
 
       <div>
+        <TodoItem />
         <div>
           <p>Đi học thêm</p>
         </div>
