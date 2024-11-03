@@ -3,11 +3,12 @@ import TodoItem from "./components/TodoItem";
 
 function App() {
   return (
-    <div>
+    <div className='container'>
       <input
         type='text'
         name='add-new-task'
         placeholder='Add new task'
+        className='task-input'
       />
 
       <div>
