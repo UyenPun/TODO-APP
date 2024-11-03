@@ -11,22 +11,10 @@ function App() {
       />
 
       <div>
-        <TodoItem />
-        <div>
-          <p>Đi học thêm</p>
-        </div>
-        <div>
-          <p>Đi học bài</p>
-        </div>
-        <div>
-          <p>Đi học võ</p>
-        </div>
-        <div>
-          <p>Đi chợ</p>
-        </div>
-        <div>
-          <p>Đi ngủ</p>
-        </div>
+        <TodoItem name='Đi học thêm' />
+        <TodoItem name='Đi học bài' />
+        <TodoItem name='Đi chơi' />
+        <TodoItem name='Đi ngủ' />
       </div>
     </div>
   );
