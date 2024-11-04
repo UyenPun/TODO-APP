@@ -10,7 +10,10 @@ const TodoItem = (props) => {
   return (
     <div
       className='todo-item'
-      onClick={handleClick}>
+      // use anonymous
+      onClick={() => {
+        alert(props.name);
+      }}>
       <p className='todo-item-text'>{props.name}</p>
     </div>
   );
