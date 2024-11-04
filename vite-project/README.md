@@ -20,3 +20,11 @@ npm run dev
 
 - prop (property - thuộc tính)
 - truyền data từ component cha vào component con
+
+# 10 Lý do không nên dùng index làm key
+
+- không dùng index làm key khi web có filter, sort
+
+# Xử lý sự kiện trong React
+
+- Event handler - xử lý sự kiện
