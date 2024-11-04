@@ -53,3 +53,8 @@ _Không gọi Hooks ở trong vòng lặp, câu điều kiện, hay trong các f
 
 - Chỉ gọi hooks từ React function components
 - Chỉ gọi hooks từ các custom hooks khác
+
+# useState:
+
+1. State có thể giữ lại dữ liệu giữa các lần component re-render
+2. Hàm setter cập nhật lại State sẽ trigger React re-render lại component
