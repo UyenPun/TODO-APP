@@ -1,9 +1,9 @@
 # Config:
 
-npm create vite@latest
-cd vite-project
-npm install
-npm run dev
+`npm create vite@latest`
+`cd vite-project`
+`npm install`
+`npm run dev`
 
 # Component là gì
 
@@ -28,3 +28,28 @@ npm run dev
 # Xử lý sự kiện trong React
 
 - Event handler - xử lý sự kiện
+
+# 12 Hooks là gì ?
+
+- Hook là 1 function JavaScript Tên của hook sẽ bắt đầu bằng chữ "use".
+
+* Ví dụ: useState, useRef,....
+
+- Có thể sử dụng các Hooks có sẵn trong React như
+  •useState
+  •useEffect
+  •use Reducer
+  •useRef
+  ....
+- Hoặc tự xây dựng các custom hook bằng cách kết hợp các hooks có sẵn của React
+
+**1. Chỉ gọi hooks ở top-level của component**
+_Không gọi Hooks ở trong vòng lặp, câu điều kiện, hay trong các function lồng nhau, hoặc các block code try / catch/ finally_
+
+- Chỉ gọi hooks tại top-level của 1 function component
+- Chỉ gọi hooks top-level của 1 custom hook
+
+**2. Chỉ gọi hooks từ React functions**
+
+- Chỉ gọi hooks từ React function components
+- Chỉ gọi hooks từ các custom hooks khác
