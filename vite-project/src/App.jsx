@@ -3,10 +3,20 @@ import TodoItem from "./components/TodoItem";
 
 function App() {
   // bien luu lai infor
-  const todoList = ["Đi học thêm", "Đi học bài", "Đi chơi", "Đi ngủ"];
+  const todoList = [
+    { id: 1, name: "Đi học thêm" },
+    { id: 2, name: "Đi học bài" },
+    { id: 3, name: "Đi chơi" },
+    { id: 4, name: "Đi ngủ" },
+  ];
 
-  const todos = todoList.map((todo) => {
-    return <TodoItem name={todo} />;
+  const todos = todoList.map((todo, index) => {
+    return (
+      <TodoItem
+        name={todo.name}
+        key={todo.id}
+      />
+    );
   });
 
   console.log({ todos });
