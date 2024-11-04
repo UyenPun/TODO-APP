@@ -2,6 +2,15 @@ import "./App.css";
 import TodoItem from "./components/TodoItem";
 
 function App() {
+  // bien luu lai infor
+  const todoList = ["Đi học thêm", "Đi học bài", "Đi chơi", "Đi ngủ"];
+
+  const todos = todoList.map((todo) => {
+    return <TodoItem name={todo} />;
+  });
+
+  console.log({ todos });
+
   return (
     <div className='container'>
       <input
@@ -11,12 +20,7 @@ function App() {
         className='task-input'
       />
 
-      <div>
-        <TodoItem name='Đi học thêm' />
-        <TodoItem name='Đi học bài' />
-        <TodoItem name='Đi chơi' />
-        <TodoItem name='Đi ngủ' />
-      </div>
+      <div>{todos}</div>
     </div>
   );
 }

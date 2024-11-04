@@ -2,11 +2,13 @@
   /* font-style: italic; */
 }
 
+/* App */
 .container {
   background-color: #f0f0f0;
   padding: 30px;
 }
 
+/* TodoItem */
 .task-input,
 .todo-item {
   border: 0;
