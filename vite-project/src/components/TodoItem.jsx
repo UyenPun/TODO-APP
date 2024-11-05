@@ -15,6 +15,9 @@ const TodoItem = (props) => {
         alert(props.name);
       }}>
       <p className='todo-item-text'>{props.name}</p>
+
+      {/* icon: 'widows + .' */}
+      {props.isImportant && <p>⭐</p>}
     </div>
   );
 };
