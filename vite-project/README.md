@@ -54,7 +54,20 @@ _Không gọi Hooks ở trong vòng lặp, câu điều kiện, hay trong các f
 - Chỉ gọi hooks từ React function components
 - Chỉ gọi hooks từ các custom hooks khác
 
-# useState:
+## useState:
 
 1. State có thể giữ lại dữ liệu giữa các lần component re-render
 2. Hàm setter cập nhật lại State sẽ trigger React re-render lại component
+
+# 15 State bộ nhớ của Component hoạt động thế nào
+
+`function App() {
+    const [count, setCount] = useState(0);
+    return <button onClick={() => setCount(count + 1)}>{count}</button>;
+}`
+
+-> render component = call a function
+
+# 17. useRef
+
+- React Hook cho phép bạn tham chiếu đến một giá trị không cần thiết khi kết xuất

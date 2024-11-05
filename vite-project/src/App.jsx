@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import "./App.css";
 import TodoItem from "./components/TodoItem";
 
@@ -11,15 +11,10 @@ function App() {
     { id: 4, name: "Đi ngủ" },
   ]);
 
-  console.log({ todoList, setTodoList });
+  // console.log({ todoList, setTodoList });
 
-  // bien luu lai infor
-  // const todoList = [
-  //   { id: 1, name: "Đi học thêm" },
-  //   { id: 2, name: "Đi học bài" },
-  //   { id: 3, name: "Đi chơi" },
-  //   { id: 4, name: "Đi ngủ" },
-  // ];
+  const inputRef = useRef();
+  // console.log({ inputRef });
 
   const todos = todoList.map((todo, index) => {
     return (
@@ -35,6 +30,7 @@ function App() {
   return (
     <div className='container'>
       <input
+        ref={inputRef}
         type='text'
         name='add-new-task'
         placeholder='Add new task'
@@ -44,13 +40,16 @@ function App() {
           if (e.key === "Enter") {
             // get value input after click Enter
             const value = e.target.value;
-            console.log(value);
+            // console.log(value);
 
             // Add value in list
             setTodoList([
               ...todoList,
               { id: crypto.randomUUID(), name: value },
             ]);
+
+            // xóa data vua nhap sau khi enter:
+            inputRef.current.value = "";
           }
         }}
       />
