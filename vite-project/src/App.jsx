@@ -11,6 +11,9 @@ function App() {
     { id: 3, name: "Đi chơi", isImportant: false, isCompleted: true },
   ]);
 
+  // Sidebar:
+  const [showSideBar, setShowSideBar] = useState(false);
+
   // Change checkbox
   const handleCompleteCheckboxChange = (todoId) => {
     const newTodoList = todoList.map((todo) => {
@@ -24,6 +27,11 @@ function App() {
     setTodoList(newTodoList);
   };
 
+  // Chang show sideber
+  const handleTodoItemClick = () => {
+    setShowSideBar(!showSideBar);
+  };
+
   const inputRef = useRef();
 
   const todos = todoList.map((todo, index) => {
@@ -35,6 +43,7 @@ function App() {
         isImportant={todo.isImportant}
         isCompleted={todo.isCompleted}
         handleCompleteCheckboxChange={handleCompleteCheckboxChange}
+        handleTodoItemClick={handleTodoItemClick}
       />
     );
   });
@@ -75,7 +84,7 @@ function App() {
       <div>{todos}</div>
 
       {/* Sidebar */}
-      <Sidebar />
+      {showSideBar && <Sidebar />}
     </div>
   );
 }
