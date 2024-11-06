@@ -5,22 +5,35 @@ import TodoItem from "./components/TodoItem";
 function App() {
   // useState
   const [todoList, setTodoList] = useState([
-    { id: 1, name: "Đi học thêm" },
-    { id: 2, name: "Đi học bài" },
-    { id: 3, name: "Đi chơi" },
-    { id: 4, name: "Đi ngủ" },
+    { id: 1, name: "Đi học thêm", isImportant: false, isCompleted: true },
+    { id: 2, name: "Đi học bài", isImportant: true, isCompleted: false },
+    { id: 3, name: "Đi chơi", isImportant: false, isCompleted: true },
   ]);
 
-  // console.log({ todoList, setTodoList });
+  // Change checkbox
+  const handleCompleteCheckboxChange = (todoId) => {
+    const newTodoList = todoList.map((todo) => {
+      if (todo.id === todoId) {
+        return { ...todo, isCompleted: !todo.isCompleted };
+      } else {
+        return todo;
+      }
+    });
+
+    setTodoList(newTodoList);
+  };
 
   const inputRef = useRef();
-  // console.log({ inputRef });
 
   const todos = todoList.map((todo, index) => {
     return (
       <TodoItem
+        id={todo.id}
         name={todo.name}
         key={todo.id}
+        isImportant={todo.isImportant}
+        isCompleted={todo.isCompleted}
+        handleCompleteCheckboxChange={handleCompleteCheckboxChange}
       />
     );
   });
@@ -40,12 +53,16 @@ function App() {
           if (e.key === "Enter") {
             // get value input after click Enter
             const value = e.target.value;
-            // console.log(value);
 
             // Add value in list
             setTodoList([
               ...todoList,
-              { id: crypto.randomUUID(), name: value },
+              {
+                id: crypto.randomUUID(),
+                name: value,
+                isImportant: false,
+                isCompleted: false,
+              },
             ]);
 
             // xóa data vua nhap sau khi enter:
