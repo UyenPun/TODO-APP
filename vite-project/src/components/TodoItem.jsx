@@ -1,9 +1,6 @@
 import React from "react";
 
 const TodoItem = (props) => {
-  const data = props.todoItem;
-  console.log({ data });
-
   return (
     <div
       className='todo-item'
