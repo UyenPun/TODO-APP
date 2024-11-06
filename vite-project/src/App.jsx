@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import "./App.css";
 import TodoItem from "./components/TodoItem";
+import Sidebar from "./components/Sidebar";
 
 function App() {
   // useState
@@ -72,6 +73,9 @@ function App() {
       />
 
       <div>{todos}</div>
+
+      {/* Sidebar */}
+      <Sidebar />
     </div>
   );
 }

@@ -1,0 +1,40 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 35vw;
+  background-color: white;
+  box-shadow: -2px 0 3px gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sb-form {
+  padding: 10px;
+}
+
+.sb-form-field {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sb-footer {
+  padding: 10px;
+  border-top: 1px solid gray;
+}
+
+.sb-footer button {
+  background-color: white;
+  border: 1px solid gray;
+  padding: 3px 5px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  margin-right: 5px;
+}
