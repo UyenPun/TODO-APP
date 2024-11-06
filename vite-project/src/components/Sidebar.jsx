@@ -14,6 +14,7 @@ const Sidebar = (props) => {
             type='text'
             id='sb-name'
             name='name'
+            value={data.name}
           />
         </div>
         <div className='sb-form-field'>
@@ -22,6 +23,7 @@ const Sidebar = (props) => {
             type='checkbox'
             id='sb-important'
             name='isImportant'
+            checked={data.isImportant}
           />
         </div>
         <div className='sb-form-field'>
@@ -30,6 +32,7 @@ const Sidebar = (props) => {
             type='checkbox'
             id='sb-completed'
             name='isCompleted'
+            checked={data.isCompleted}
           />
         </div>
       </form>

@@ -57,8 +57,6 @@ function App() {
     );
   });
 
-  console.log({ todos });
-
   return (
     <div className='container'>
       <input
@@ -94,6 +92,7 @@ function App() {
 
       {/* Sidebar */}
       {showSideBar && <Sidebar todoItem={activeTodoItem} />}
+      {activeTodoItem && <Sidebar todoItem={activeTodoItem} />}
     </div>
   );
 }
