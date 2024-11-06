@@ -14,6 +14,11 @@ function App() {
   // Sidebar:
   const [showSideBar, setShowSideBar] = useState(false);
 
+  // Item đang được lựa chọn
+  const [activeTodoItemId, setactiveTodoItemId] = useState();
+
+  // ----------------------------------------
+
   // Change checkbox
   const handleCompleteCheckboxChange = (todoId) => {
     const newTodoList = todoList.map((todo) => {
@@ -28,9 +33,13 @@ function App() {
   };
 
   // Chang show sideber
-  const handleTodoItemClick = () => {
-    setShowSideBar(!showSideBar);
+  const handleTodoItemClick = (todoId) => {
+    setShowSideBar(showSideBar); // khi click vào 1 item khác mà side bar ko mất đi chỉ load data của item khác lên -> bỏ !
+    setactiveTodoItemId(todoId);
   };
+
+  // Load data theo item lên sidebar khi click
+  const activeTodoItem = todoList.find((todo) => todo.id === activeTodoItemId);
 
   const inputRef = useRef();
 
@@ -84,7 +93,7 @@ function App() {
       <div>{todos}</div>
 
       {/* Sidebar */}
-      {showSideBar && <Sidebar />}
+      {showSideBar && <Sidebar todoItem={activeTodoItem} />}
     </div>
   );
 }
